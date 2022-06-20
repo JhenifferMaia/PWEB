@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <div>
+    <label for="weather">Selecione o tipo de clima de hoje: </label>
+    <select id="weather">
+      <option value="">--Escolha--</option>
+      <option value="sunny">Ensolarado</option>
+      <option value="rainy">Chuvoso</option>
+      <option value="snowing">Nevando</option>
+      <option value="nublado">Nublado</option>
+
+    </select>
+    <p></p>
+</div>
+    <style>
+        body{
+            background-color: rgb(6, 87, 87);
+        }
+        div{
+
+            position: absolute;
+            top: 20%;
+            margin-left: 20%;
+        }
+        label{
+            color:rgb(236, 1, 178);
+            font-size: 45px;
+            
+        }
+    </style>
+
+<script>
+    /*var nome = "Arthur Pedro Donato";
+    var idade = 18;
+    var matricula = true;
+    /*class Aluno{
+        constructor(nomeCompleto, idade, matricula){
+            this.nomeCompleto;
+            this.idade;
+            this.matricula;
+        }
+        
+    }*/
+  //nome = prompt("qual seu nome?");
+  //alert(nome);
+
+    //let aluno1 = new Aluno("Arthur Pedro Donato", 18, "Verdadeira");
+    //console.log(nome);
+
+    var select = document.querySelector('select');
+    var para = document.querySelector('p');
+
+    select.addEventListener('change', setWeather);
+    //change - mudança de opção
+    function setWeather() {
+    var choice = select.value;
+
+        if (choice === 'sunny') {
+            para.textContent = 'Está um clima agradável lá fora!';
+        } else if (choice === 'rainy') {
+            para.textContent = 'A chuva está caindo lá fora.';
+        } else if (choice === 'snowing') {
+            para.textContent = 'Está nevando lá fora, vá fazer um boneco de neve';
+        } else if (choice === 'nublado') {
+            para.textContent = 'Está nublado lá fora, vá fazer um piquenique';
+        }else {
+            para.textContent = '';
+        }
+    }
+</script>
+
+</body>
+</html>
